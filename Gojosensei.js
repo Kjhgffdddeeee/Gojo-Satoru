@@ -1935,7 +1935,7 @@ break
                 await fs.unlinkSync(media)
             }
             break
-            case 'الى صوتية': case 'لصوتية': {
+            case 'الى صوتية': case 'لصوتي': {
             if (!/video/.test(mime) && !/audio/.test(mime)) return replay(`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
             if (!quoted) return reply(`Send/Reply Video/Audio You Want To Convert To Audio With Caption ${prefix + command}`)
             reply(mess.wait)
@@ -1966,7 +1966,7 @@ break
             GojoMdNx.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
             }
             break
-            case 'لجيف': {
+            case 'متحركه': {
                 if (!quoted) return reply(`Reply Image`)
                 if (!/webp/.test(mime)) return reply(`Reply Sticker With Caption *${prefix + command}*`)
                 reply(mess.wait)
@@ -2062,8 +2062,8 @@ break
         })
         }
         break
-	    case 'play': case 'فيديو': case 'ytplay': {
-                if (!text) return reply(`Example : ${prefix + command} غوجو ساتورو`)
+	    case 'play': case 'فيديو': case 'شغل': {
+                if (!text) return reply(`Example : ${prefix + command} الجزار الوزير`)
                 let yts = require("yt-search")
                 let search = await yts(text)
                 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
@@ -3464,7 +3464,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 		    「 معك بوت الجزار 🤗 」◣
 		    「 افضل بوت عربي 」◣
  「 رابط فرع التعليم على البوت」◣
-		    「https://chat.whatsapp.com/FRu7Ogowi8V3ugTQQ5Y06H」◣
+		    「https://chat.whatsapp.com/FRu7Ogowi8V3ugTQQ5Y06H 」◣
 		    「 الي محتاج شروحات ينضم 」◣`,
                     description: `「 اختر قائمة من فضلك 」◣`,
                     buttonText: "「 القائمة 」◣",
@@ -3594,7 +3594,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
             case 'التسجhgjيل': case 'التسجيل': {
                 reply(`「 الجروب الخاص لتعليم عمل بوت 」◣
 
-「 __ 」◣
+「 _https://chat.whatsapp.com/FRu7Ogowi8V3ugTQQ5Y06H_ 」◣
 
 「 نرحب بالجميع. 」◣`)
             }
@@ -3870,13 +3870,13 @@ var unicorn = await getBuffer(picak+'.4.')
 await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┏━「 ${botname} 」━━⭓ 
 ┃╔═✪「 المجموعات 」	        
-┃╠المنشن
+┃╠تاك
 ┃╠المنشن.المخفي
 ┃╠المتصلين
 ┃╠الرابط
 ┃╠اضافة
-┃╠ترقية 
-┃╠تخفيض
+┃╠رفع
+┃╠تنزيل
 ┃╠طرد
 ┃╠الجروب
 ┃╠التعديل
@@ -4039,8 +4039,8 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┃╠لصورة
 ┃╠لفيديو
 ┃╠لمقطع.صوتي
-┃╠لصوتية
-┃╠لجيف
+┃╠لصوتي
+┃╠متحركه
 ┃╚═════════════✪
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "「 قناتي 」「📍」◣","url": `${myweb}`}},{"urlButton": {"displayText": "「 رابط الاستقبال 」「📌」◣","url": `${sc}`}},{"quickReplyButton": {"displayText": "「 الاستلام 」「🍜」◣","id": 'donate'}},{"quickReplyButton": {"displayText": "「 المالك 」「👤」◣","id": 'owner'}}] )
 break
