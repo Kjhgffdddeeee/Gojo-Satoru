@@ -19,30 +19,30 @@ global.APIKeys = {
 }
 
 //customize settings\\
-global.owner = ['96891103640']
-global.premium = ['96891103640']
-global.ownernomer = '96891103640'
-global.ownername = '♛ الامبراطور اياتو ♛'
-global.botname = '♛ غوجو بوت ♛'
-global.footer = ' غوجو بوت ♛'
-global.ig = 'https://github.com/nexusNw'
-global.region = 'India, South India, Kerala'
-global.sc = 'https://chat.whatsapp.com/CKLmAGJo3iw5AvNM1KZee3'
-global.myweb = 'https://youtube.com/channel/UCPvrnWknQrgCSIeobXMP0Uw'
-global.packname = 'https://Wa.Me/+96891103640'
-global.author = '[ غـوجـو ]'
+global.owner = ['201098906252']
+global.premium = ['201098906252']
+global.ownernomer = '201098906252'
+global.ownername = '♛ 𝑬𝑳𝑮𝑨𝒁𝑨𝑹 𝑨𝑳𝑾𝑨𝒁𝑬𝑹 ♛'
+global.botname = '♛ 𝑩𝑶𝑻 𝑬𝑳𝑮𝑨𝒁𝑨𝑹 ♛'
+global.footer = ' 𝑩𝑶𝑻 𝑬𝑳𝑮𝑨𝒁𝑨𝑹 ♛'
+global.ig = 'https://github.comusNw'
+global.region = 'Egypt, South Africa, Cairo'
+global.sc = 'https://chat.whatsapp.com/FRu7Ogowi8V3ugTQQ5Y06H'
+global.myweb = 'https://youtube.com/channel/UCxVaIay8BccgBtsofagA6_g'
+global.packname = 'https://Wa.Me/+201098906252'
+global.author = '[ الـجـزار ]'
 global.sessionName = 'session'
 global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
 global.mess = {
     success: '✓',
     admin: '*「 هـذا الامـر فـقـط لـ المـشـرفـيـن 」◣*',
-    botAdmin: '*「 اعـطـنـي إشـراف لـتـفـعـيـل  الامـر 」◣*',
+    botAdmin: '*「 ارفعني مشرف لـتـفـعـيـل  الامـر 」◣*',
     owner: '*「 هـذا الامـر فـقـط لـ الـمـالـك 」◣*',
     group: '*「 هـذا الامـر فـي الـمـجـمـوعـات فـقـط 」◣*',
     private: '*「 هـذا الامـر فـي الـخـاص فـقـط 」◣*',
     bot: '*「 هـذا الامـر مـخـصـص لـ الـبـوت 」◣*',
-    wait: '*「 انـتـظـر مـن فـضـلـك 」◣*',
+    wait: '*「 اسـتـني شـويـه... 」◣*',
     error: 'Error! Maybe Api Key Is Expired🤔!',
     endLimit: 'Your Daily Limit Has Expired, The Limit Will Be Reset Every 1000 Hours',
 }
