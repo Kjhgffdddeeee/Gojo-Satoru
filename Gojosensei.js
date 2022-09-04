@@ -864,7 +864,7 @@ if (q.includes('--help')) return reply(examkosong)
       {
        buttonId: `${prefix + command}`, 
        buttonText: {
-        displayText: 'Hunt Again️🏹'
+        displayText: 'مطاردة مرة أخرى️🏹'
       }, type: 1},
     ]
     let buttonMessage = {
@@ -877,7 +877,7 @@ if (q.includes('--help')) return reply(examkosong)
      GojoMdNx.sendMessage(from, buttonMessage, { quoted: m })      
   }, 5000)  
  setTimeout( () => {
-  reply(`@${m.sender.split("@")[0]} Started Hunting In ${lokasinya}`)     
+  reply(`@${m.sender.split("@")[0]} بدأ الصيد في ${lokasinya}`)     
   }, 1000) 
  addIkan(m.sender, ikanmu) 
    addAyam(m.sender, ayam) 
@@ -892,16 +892,16 @@ if (q.includes('--help')) return reply(examkosong)
                 let user = global.db.data.users[m.sender]
                 user.afkTime = + new Date
                 user.afkReason = text
-                reply(`${m.pushName} Has Gone Afk/Offline${text ? ': ' + text : ''}`)
+                reply(`${m.pushName} ذهب Afk / غير متصل${text ? ': ' + text : ''}`)
             }
             break	
-        case 'xo': case 'ttt': case 'tictactoe': {
+        case 'xo': case 'ttt': case 'اكس.او': {
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
-            if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return replay(`You Are Still In The Game`)
+            if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return replay(`أنت لا تزال في اللعبة`)
             let room = Object.values(this.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
             if (room) {
-            reply('Partner found!')
+            reply('وجدت الشريك!')
             room.o = m.chat
             room.game.playerO = m.sender
             room.state = 'PLAYING'
@@ -920,7 +920,7 @@ if (q.includes('--help')) return reply(examkosong)
             9: '9️⃣',
             }[v]
             })
-            let str = `Room ID: ${room.id}
+            let str = `ايدي الروم: ${room.id}
 
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
@@ -940,22 +940,22 @@ Type *surrender* to surrender and admit defeat`
             state: 'WAITING'
             }
             if (text) room.name = text
-            reply('Waiting For Partner' + (text ? ` Type The Command Below ${prefix}${command} ${text}` : ''))
+            reply('في انتظار الشريك' + (text ? ` اكتب الأمر أدناه ${prefix}${command} ${text}` : ''))
             this.game[room.id] = room
             }
             }
             break
-            case 'delttc': case 'delttt': {
+            case 'delttc': case 'مغاده.الجيم': {
             this.game = this.game ? this.game : {}
             try {
             if (this.game) {
             delete this.game
-            GojoMdNx.sendText(m.chat, `Successfully Deleted The TicTacToe Session`, m)
+            GojoMdNx.sendText(m.chat, `تم حذف الجلسه بنجاح`, m)
             } else if (!this.game) {
-            reply(`TicTacToe🎮 Session Does Not Exist`)
+            reply(`الجلسه غير موجوده`)
             } else reply('?')
             } catch (e) {
-            reply('Damaged')
+            reply('تالف')
             }
             }
             break
@@ -964,10 +964,10 @@ Type *surrender* to surrender and admit defeat`
             let poin = 10
             let poin_lose = 10
             let timeout = 60000
-            if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) return replay(`Complete Your Previous Suit`)
-	    if (m.mentionedJid[0] === m.sender) return reply(`Can't Play With Myself !`)
-            if (!m.mentionedJid[0]) return reply(`_Who Do You Want To Challenge?_\nTag The Person..\n\nExample : ${prefix}suit @${owner[1]}`, m.chat, { mentions: [owner[1] + '@s.whatsapp.net'] })
-            if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.mentionedJid[0])))  reply(`The Person You Are Challenging Is Playing Suit With Someone Else :(`)
+            if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) return replay(`أكمل بدلتك السابقة`)
+	    if (m.mentionedJid[0] === m.sender) return reply(`لا أستطيع اللعب مع نفسي !`)
+            if (!m.mentionedJid[0]) return reply(`_ من تريد أن تتحدى_\nضع علامة على الشخص..\n\nمثال : ${prefix}suit @${owner[1]}`, m.chat, { mentions: [owner[1] + '@s.whatsapp.net'] })
+            if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.mentionedJid[0])))  reply(`الشخص الذي تتحداه يرتدي بدلة مع شخص آخر :(`)
             let id = 'suit_' + new Date() * 1
             let caption = `_*SUIT PvP*_
 
