@@ -1667,38 +1667,28 @@ break
 
             }
             }
-break
-              case 'الروابط': {
-   if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-if (!m.isGroup) return replay(mess.group)
-if (!isBotAdmins) return replay(mess.botAdmin)
-if (!isAdmins && !isCreator) return replay(mess.admin)
-if (args[0] === "on") {
-if (AntiLinkTwitter) return replay('Already activated')
-ntilinkall.push(from)
-replay('النجاح في تشغيل جميع مضادات الروابط في هذه المجموعة')
-var groupe = await XeonBotInc.groupMetadata(from)
-var members = groupe['participants']
-var mems = []
-members.map(async adm => {
-mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
-})
-XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nإذا لم تكن مسؤولاً ، فلا ترسل أي رابط في هذه المجموعة وإلا فسيتم طردك على الفور!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
-} else if (args[0] === "off") {
-if (!AntiLinkAll) return replay('تم إلغاء تنشيطه بالفعل')
-let off = ntilinkall.indexOf(from)
-ntilinkall.splice(off, 1)
-replay('النجاح في إيقاف تشغيل جميع مضادات الروابط في هذه المجموعة')
-} else {
-  let buttonsntilink = [
-  { buttonId: `${command} on`, buttonText: { displayText: 'فتح' }, type: 1 },
-  { buttonId: `${command} off`, buttonText: { displayText: 'قفل' }, type: 1 }
-  ]
-  await XeonBotInc.sendButtonText(m.chat, buttonsntilink, `يرجى النقر على الزر أدناه\n\nفتح\nقفل`, `${global.botname}`, m)
-  }
-  }
-  break
+            break
+            case 'الروابط': {
+                if (!m.isGroup) return replay(`${mess.group}`)
+                if (!isBotAdmins) return replay(`${mess.botAdmin}`)
+                if (!isAdmins) return replay(`${mess.admin}`)
+                if (args[0] === "on") {
+                if (db.data.chats[m.chat].antilink) return reply(`Deactivated`)
+                db.data.chats[m.chat].antilink = true
+                reply(`منع الروابط نشط!`)
+                } else if (args[0] === "off") {
+                if (!db.data.chats[m.chat].antilink) return reply(`Antilink Inactive`)
+                db.data.chats[m.chat].antilink = false
+                reply(`منع الروابط غير نشط!`)
+                } else {
+                 let buttons = [
+                        { buttonId: 'antilink on', buttonText: { displayText: 'فتح' }, type: 1 },
+                        { buttonId: 'antilink off', buttonText: { displayText: 'قفل' }, type: 1 }
+                    ]
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `Antilink Mode`, GojoMdNx.user.name, m)
+                }
+             }
+             break
              case 'mute': {
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
