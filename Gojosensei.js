@@ -1632,58 +1632,58 @@ break
             reply('Successfully Deleted The Vote Session In This Group')
 	    }
             break
-               case 'الجروب': case 'جروب': {
+               case 'group': case 'grup': {
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
                 if (args[0] === 'close'){
-                    await GojoMdNx.groupSettingUpdate(m.chat, 'announcement').then((res) => reply(`تم غلق المجموعة`)).catch((err) => reply(jsonformat(err)))
+                    await GojoMdNx.groupSettingUpdate(m.chat, 'announcement').then((res) => reply(`Successful Closing The Group`)).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'open'){
-                    await GojoMdNx.groupSettingUpdate(m.chat, 'not_announcement').then((res) => reply(`اصبحت المجموعة عامة`)).catch((err) => reply(jsonformat(err)))
+                    await GojoMdNx.groupSettingUpdate(m.chat, 'not_announcement').then((res) => reply(`Successful Opening The Group`)).catch((err) => reply(jsonformat(err)))
                 } else {
                 let buttons = [
-                        { buttonId: 'group open', buttonText: { displayText: 'نعم' }, type: 1 },
-                        { buttonId: 'group close', buttonText: { displayText: 'لا' }, type: 1 }
+                        { buttonId: 'group open', buttonText: { displayText: 'Open' }, type: 1 },
+                        { buttonId: 'group close', buttonText: { displayText: 'Close' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(m.chat, buttons, `هل ترغب ب اغلاق الجروب؟؟`, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `Group Mode`, GojoMdNx.user.name, m)
 
              }
             }
             break
-	case 'تعديل': case 'التعديل': {
+            case 'editinfo': {
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
              if (args[0] === 'open'){
-                await GojoMdNx.groupSettingUpdate(m.chat, 'unlocked').then((res) => reply(`مسموح لأي احد ب التعديل ف اعدادات المجموعة`)).catch((err) => reply(jsonformat(err)))
+                await GojoMdNx.groupSettingUpdate(m.chat, 'unlocked').then((res) => reply(`Successfully Opened Edit Group Info`)).catch((err) => reply(jsonformat(err)))
              } else if (args[0] === 'close'){
-                await GojoMdNx.groupSettingUpdate(m.chat, 'locked').then((res) => reply(`مسموح فقط للمشرفين ل تعديل ف الاعدادات`)).catch((err) => reply(jsonformat(err)))
+                await GojoMdNx.groupSettingUpdate(m.chat, 'locked').then((res) => reply(`Successfully Closed Edit Group Info`)).catch((err) => reply(jsonformat(err)))
              } else {
              let buttons = [
-                        { buttonId: 'نعم', buttonText: { displayText: 'نعم' }, type: 1 },
-                        { buttonId: 'لا', buttonText: { displayText: 'لا' }, type: 1 }
+                        { buttonId: 'editinfo open', buttonText: { displayText: 'Open' }, type: 1 },
+                        { buttonId: 'editinfo close', buttonText: { displayText: 'Close' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(m.chat, buttons, `ان كنت ترغب بأن تكون اعدادات المجموعة عامة اضغط نعم وان كنت ترغب بأن تكون خاصة اضغط لا`, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `Mode Edit Info`, GojoMdNx.user.name, m)
 
             }
             }
             break
-            case 'الروابط': {
+            case 'antilink': {
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
                 if (args[0] === "on") {
-                if (db.data.chats[m.chat].antilink) return reply(`Deactivated`)
+                if (db.data.chats[m.chat].antilink) return reply(`Activated`)
                 db.data.chats[m.chat].antilink = true
-                reply(`منع الروابط نشط!`)
+                reply(`Antilink Active !`)
                 } else if (args[0] === "off") {
-                if (!db.data.chats[m.chat].antilink) return reply(`Antilink Inactive`)
+                if (!db.data.chats[m.chat].antilink) return reply(`Deactivated`)
                 db.data.chats[m.chat].antilink = false
-                reply(`منع الروابط غير نشط!`)
+                reply(`Antilink Inactive !`)
                 } else {
                  let buttons = [
-                        { buttonId: 'antilink on', buttonText: { displayText: 'فتح' }, type: 1 },
-                        { buttonId: 'antilink off', buttonText: { displayText: 'قفل' }, type: 1 }
+                        { buttonId: 'antilink on', buttonText: { displayText: 'On' }, type: 1 },
+                        { buttonId: 'antilink off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
                     await GojoMdNx.sendButtonText(m.chat, buttons, `Antilink Mode`, GojoMdNx.user.name, m)
                 }
