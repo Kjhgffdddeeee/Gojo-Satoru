@@ -150,11 +150,11 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 
 ⭐✑ الوصف: ${metadata.desc}
 
-⭐✑ نورت الجروب يقمر يجب احترام الجميع والالتزام بالقوانين في الوصف♥!`} )
+⭐✑ نورت الجروب يقمر يجب احترام الجميع والالتزام بالقوانين في الوصف♥!!`} )
                 } else if (anu.action == 'remove') {
-                    GojoMdNx.sendMessage(anu.id, { image: Tol, contextInfo: { mentionedJid: [num] }, شرح: `⭐✑ @${num.split("@")[0]} Left ${metadata.subject}
+                    GojoMdNx.sendMessage(anu.id, { image: Tol, contextInfo: { mentionedJid: [num] }, caption: `⭐✑ @${num.split("@")[0]} غادر ${metadata.subject}
 
-⭐✑ حد يخرج من جروب قمر زي دا🥺دا حتا كلنا اخوات واصحاب😌✨` })
+⭐✑ عادي تخرج يجي غيرك😌✨` })
                 }
             }
         } catch (err) {

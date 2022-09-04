@@ -455,13 +455,13 @@ ${Array.from(room.jawaban, (jawaban, index) => {
 	    isWin = true
 	    }
 	    let winner = isSurrender ? room.game.currentTurn : room.game.winner
-	    let str = `Room ID: ${room.id}
+	    let str = `ايدي الروم: ${room.id}
 
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
-${isWin ? `@${winner.split('@')[0]} Won!` : isTie ? `Game Over` : `Turn ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
+${isWin ? `@${winner.split('@')[0]} مبروك كسبت!` : isTie ? `لقد خسرت` : `دور ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
 ❌: @${room.game.playerX.split('@')[0]}
 ⭕: @${room.game.playerO.split('@')[0]}
 
@@ -926,9 +926,9 @@ ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
-Waiting @${room.game.currentTurn.split('@')[0]}
+انتظار @${room.game.currentTurn.split('@')[0]}
 
-Type *surrender* to surrender and admit defeat`
+اكتب * استسلام * للاستسلام والاعتراف بالهزيمة`
             if (room.x !== room.o) await GojoMdNx.sendText(room.x, str, m, { mentions: parseMention(str) } )
             await GojoMdNx.sendText(room.o, str, m, { mentions: parseMention(str) } )
             } else {
@@ -1450,7 +1450,7 @@ let teks = `「المنشن الجماعي」◣
                 GojoMdNx.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
                 }
                 break
-	case 'منشن.مخفي': case `المنشن.المخفي` : {
+	case 'منشن.وهمي': case `المنشن.الوهمي` : {
             if (!m.isGroup) return replay(`${mess.group}`)
             if (!isBotAdmins) return replay(`${mess.botAdmin}`)
             if (!isAdmins) return replay(`${mess.admin}`)
@@ -3494,57 +3494,57 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"rowId": `${prefix}ownermenu`
 										},
 									{
-										"title": "قائمة المجموعات",
+										"title": "قائمة المجموعات🌐",
 										"description": ".4.",
 										"rowId": `${prefix}groupmenu`
 										},
 									{
-										"title": "قائمة الالعاب",
+										"title": "قائمة الالعاب🕹️",
 										"description": ".5.",
 										"rowId": `${prefix}rpgmenu`
 									},
 									{
-										"title": "قائمة التنزيلات",
+										"title": "قائمة التنزيلات🔄",
 										"description": ".6.",
 										"rowId": `${prefix}downloadmenu`
 									},
 									{
-										"title": "قائمة البحث",
+										"title": "قائمة البحث🔂",
 										"description": ".7.",
 										"rowId": `${prefix}searchmenu`
 									},
 									{
-											"title": "قائمة صور الانمي",
+											"title": "قائمة صور الانمي🌅",
 										"description": ".8.",
 										"rowId": `${prefix}randommenu`
 										},
 										{
-											"title": "قائمة ملصقات الانمي",
+											"title": "قائمة ملصقات الانمي🎟️",
 										"description": ".9.",
 										"rowId": `${prefix}randomanimemenu`
 										},
 										{
-											"title": "قائمة السخرية",
+											"title": "قائمة السخرية🗿",
 										"description": ".10.",
 										"rowId": `${prefix}funmenu`
 										},
 										{
-											"title": "قائمة التحويلات",
+											"title": "قائمة التحويلات♻️",
 										"description": ".11.",
 										"rowId": `${prefix}convertmenu`
 										},
 										{
-											"title": "قائمة البيانات",
+											"title": "قائمة البيانات📀",
 										"description": ".12.",
 										"rowId": `${prefix}databasemenu`
 										},
 										{
-											"title": "قائمة مغير الاصوات",
+											"title": "قائمة مغير الاصوات🔊",
 										"description": ".13.",
 										"rowId": `${prefix}voicechangermenu`
 										},
 										{
-											"title": "قائمة الزخرفة",
+											"title": "قائمة الزخرف📝ة",
 										"description": ".14.",
 										"rowId": `${prefix}textpromenu`
 										},
@@ -3554,7 +3554,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"rowId": `${prefix}islamicmenu`
 										},
 										{
-											"title": "قائمة اضافية",
+											"title": "قائمة اضافية🌚",
 										"description": ".16.",
 										"rowId": `${prefix}horoscopemenu`
 										}
@@ -3564,7 +3564,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								"title": "المملكة",
 								"rows": [
 									{
-										"title": "قائمة استمارات مملكة الجزار",
+										"title": "قائمة استمارات مملكة الجزار❤️",
 										"description": ".17.",
 										"rowId": `${prefix}anon`
 									}
@@ -3857,7 +3857,7 @@ case 'mainmenu':
 var unicorn = await getBuffer(picak+'.2.')
 await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┏━「 ${botname} 」━━⭓ 
-┃╔═✪「 القائمة 」
+┃╔═✪「 قائمه المالك 」
 ┃╠الاوامر
 ┃╠المالك
 ┃╠التسجيل
@@ -3871,7 +3871,7 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┏━「 ${botname} 」━━⭓ 
 ┃╔═✪「 المجموعات 」	        
 ┃╠تاك
-┃╠المنشن.المخفي
+┃╠المنشن.الوهمي
 ┃╠المتصلين
 ┃╠الرابط
 ┃╠اضافة
@@ -3890,7 +3890,7 @@ var unicorn = await getBuffer(picak+'.5.')
 await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┏━「 ${botname} 」━━⭓
 ┃╔═✪「 الألعاب 」	        
-┃╠الاكس او | ttt
+┃╠الاكس او |xo
 ┃╠حذف الاكس او | delttt
 ┃╠الكتابة | كت
 ┃╠الكتابة | كتت
