@@ -1673,13 +1673,13 @@ break
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
                 if (args[0] === "on") {
-                if (db.data.chats[m.chat].antilink) return reply(`Activated`)
+                if (db.data.chats[m.chat].antilink) return reply(`مفعل`)
                 db.data.chats[m.chat].antilink = true
-                reply(`Antilink Active !`)
+                reply(`منع الروابط نشط!`)
                 } else if (args[0] === "off") {
-                if (!db.data.chats[m.chat].antilink) return reply(`Deactivated`)
+                if (!db.data.chats[m.chat].antilink) return reply(`معطل`)
                 db.data.chats[m.chat].antilink = false
-                reply(`Antilink Inactive !`)
+                reply(`منع الروابط غير نشط!`)
                 } else {
                  let buttons = [
                         { buttonId: 'antilink on', buttonText: { displayText: 'فتح' }, type: 1 },
