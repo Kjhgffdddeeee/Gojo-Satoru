@@ -1457,7 +1457,7 @@ let teks = `「المنشن الجماعي」◣
             GojoMdNx.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
             }
             break
-	    case 'style': case 'styletext': {
+	    case 'زغرفه': case 'styletext': {
 	        if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit) //wont response when limit runs out\\
 		db.data.users[m.sender].limit -= 1 // -1 limit
 		let { styletext } = require('./lib/scraper')
@@ -1597,24 +1597,24 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
 	}
             break
                  
-case 'checkvote':
+case 'تصويت':
 if (!m.isGroup) return replay(`${mess.group}`)
-if (!(m.chat in vote)) return replay(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
-teks_vote = `*「 VOTE 」*
+if (!(m.chat in vote)) return replay(`_* لا يوجد تصويت في هذه المجموعة!*_\n\n*${prefix}تصويت* - لبدء التصويت`)
+teks_vote = `*「 تصويت 」*
 
-*Reason:* ${vote[m.chat][0]}
+*سبب:* ${vote[m.chat][0]}
 
-┌〔 UPVOTE 〕
+┌〔 التصويت 〕
 │ 
-┃╠ Total: ${upvote.length}
-${vote[m.chat][1].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
+┃╠ المجموع: ${upvote.length}
+${تصويت[m.chat][1].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 │ 
 └────
 
-┌〔 DEVOTE 〕
+┌〔 الغاء التصويت 〕
 │ 
-┃╠ Total: ${devote.length}
-${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
+┃╠ المجموع: ${devote.length}
+${تصويت[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 │ 
 └────
 
@@ -1632,75 +1632,75 @@ break
             reply('Successfully Deleted The Vote Session In This Group')
 	    }
             break
-               case 'group': case 'grup': {
+               case 'group': case 'جروب': {
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
                 if (args[0] === 'close'){
-                    await GojoMdNx.groupSettingUpdate(m.chat, 'announcement').then((res) => reply(`Successful Closing The Group`)).catch((err) => reply(jsonformat(err)))
+                    await GojoMdNx.groupSettingUpdate(m.chat, 'announcement').then((res) => reply(`تم قفل الجروب بنجاح`)).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'open'){
-                    await GojoMdNx.groupSettingUpdate(m.chat, 'not_announcement').then((res) => reply(`Successful Opening The Group`)).catch((err) => reply(jsonformat(err)))
+                    await GojoMdNx.groupSettingUpdate(m.chat, 'not_announcement').then((res) => reply(`تم فتح الجروب بنجاح`)).catch((err) => reply(jsonformat(err)))
                 } else {
                 let buttons = [
-                        { buttonId: 'group open', buttonText: { displayText: 'Open' }, type: 1 },
-                        { buttonId: 'group close', buttonText: { displayText: 'Close' }, type: 1 }
+                        { buttonId: 'group open', buttonText: { displayText: 'فتح' }, type: 1 },
+                        { buttonId: 'group close', buttonText: { displayText: 'قفل' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(m.chat, buttons, `Group Mode`, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `اختر فتح/قفل`, GojoMdNx.user.name, m)
 
              }
             }
             break
-            case 'editinfo': {
+            case 'التعديل': {
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
              if (args[0] === 'open'){
-                await GojoMdNx.groupSettingUpdate(m.chat, 'unlocked').then((res) => reply(`Successfully Opened Edit Group Info`)).catch((err) => reply(jsonformat(err)))
+                await GojoMdNx.groupSettingUpdate(m.chat, 'unlocked').then((res) => reply(`تم فتح التعديل علي معلومات المجموعه`)).catch((err) => reply(jsonformat(err)))
              } else if (args[0] === 'close'){
-                await GojoMdNx.groupSettingUpdate(m.chat, 'locked').then((res) => reply(`Successfully Closed Edit Group Info`)).catch((err) => reply(jsonformat(err)))
+                await GojoMdNx.groupSettingUpdate(m.chat, 'locked').then((res) => reply(`تم قفل التعديل علي معلومات المجموعه`)).catch((err) => reply(jsonformat(err)))
              } else {
              let buttons = [
-                        { buttonId: 'editinfo open', buttonText: { displayText: 'Open' }, type: 1 },
-                        { buttonId: 'editinfo close', buttonText: { displayText: 'Close' }, type: 1 }
+                        { buttonId: 'editinfo open', buttonText: { displayText: 'فتح' }, type: 1 },
+                        { buttonId: 'editinfo close', buttonText: { displayText: 'قفل' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(m.chat, buttons, `Mode Edit Info`, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `اختر فتح/قفل`, GojoMdNx.user.name, m)
 
             }
             }
             break
-            case 'antilink': {
+            case 'الروابط': {
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
                 if (args[0] === "on") {
                 if (db.data.chats[m.chat].antilink) return reply(`Activated`)
                 db.data.chats[m.chat].antilink = true
-                reply(`Antilink Active !`)
+                reply(`تم تفعيل منع الروابط !`)
                 } else if (args[0] === "off") {
                 if (!db.data.chats[m.chat].antilink) return reply(`Deactivated`)
                 db.data.chats[m.chat].antilink = false
-                reply(`Antilink Inactive !`)
+                reply(`تم قفل منع الروابط !`)
                 } else {
                  let buttons = [
-                        { buttonId: 'antilink on', buttonText: { displayText: 'On' }, type: 1 },
-                        { buttonId: 'antilink off', buttonText: { displayText: 'Off' }, type: 1 }
+                        { buttonId: 'antilink on', buttonText: { displayText: 'فتح' }, type: 1 },
+                        { buttonId: 'antilink off', buttonText: { displayText: 'قفل' }, type: 1 }
                     ]
-                    await GojoMdNx.sendButtonText(m.chat, buttons, `Antilink Mode`, GojoMdNx.user.name, m)
+                    await GojoMdNx.sendButtonText(m.chat, buttons, `اختر فتح/قفل`, GojoMdNx.user.name, m)
                 }
              }
              break
-             case 'mute': {
+             case 'بان': {
                 if (!m.isGroup) return replay(`${mess.group}`)
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
                 if (args[0] === "on") {
-                if (db.data.chats[m.chat].mute) return reply(`Previously Active`)
+                if (db.data.chats[m.chat].mute) return reply(`نشط سابقا`)
                 db.data.chats[m.chat].mute = true
-                reply(`${GojoMdNx.user.name} Has Been Muted In This Group !`)
+                reply(`${GojoMdNx.user.name} تم حظر البوت في هذه المجموعه !`)
                 } else if (args[0] === "off") {
-                if (!db.data.chats[m.chat].mute) return reply(`Previously Inactive`)
+                if (!db.data.chats[m.chat].mute) return reply(`غير نشط سابقًا`)
                 db.data.chats[m.chat].mute = false
-                reply(`${GojoMdNx.user.name} Has Been Unmuted In This Group!`)
+                reply(`${GojoMdNx.user.name} تم الغاء حظر البوت في هذه المجموعه!`)
                 } else {
                  let buttons = [
                         { buttonId: 'mute on', buttonText: { displayText: 'فتح' }, type: 1 },
@@ -3016,7 +3016,7 @@ ${id}`)
 		reply(txt)
 		}
 		break
-		   case 'bass': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat': case 'nightcore': case 'reverse': case 'robot': case 'slow': case 'smooth': case 'squirrel':
+		   case 'bass': case 'blown': case 'deep': case 'earrape': case 'سريع': case 'fat': case 'nightcore': case 'reverse': case 'robot': case 'بطئ': case 'smooth': case 'squirrel':
                 try {
                 let set
                 if (/bass/.test(command)) set = '-af equalizer=f=54:width_type=o:width=2:g=20'
