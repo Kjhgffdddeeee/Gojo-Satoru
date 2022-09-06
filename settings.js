@@ -19,18 +19,18 @@ global.APIKeys = {
 }
 
 //customize settings\\
-global.owner = ['201098906252']
-global.premium = ['201098906252']
-global.ownernomer = '201098906252'
-global.ownername = '𝑬𝑳𝑮𝑨𝒁𝑨𝑹 𝑨𝑳𝑾𝑨𝒁𝑬𝑹🐼🍷'
-global.botname = '𝑩𝑶𝑻 𝑬𝑳𝑮𝑨𝒁𝑨𝑹🐼🍷'
-global.footer = ' 𝑩𝑶𝑻 𝑬𝑳𝑮𝑨𝒁𝑨𝑹🐼🍷'
-global.ig = 'https://github.comusNw'
+global.owner = ['201282987471']
+global.premium = ['201282987471']
+global.ownernomer = '201282987471'
+global.ownername = '𝑴𝑬𝑴𝑶🐼🍷'
+global.botname = '𝑩𝑶𝑻 𝑴𝑬𝑴𝑶🐼🍷'
+global.footer = ' 𝑩𝑶𝑻 𝑴𝑬𝑴𝑶🐼🍷'
+global.ig = 'https://github.usNw'
 global.region = 'Egypt, South Africa, Cairo'
 global.sc = 'https://chat.whatsapp.com/FRu7Ogowi8V3ugTQQ5Y06H'
 global.myweb = 'https://youtube.com/channel/UCxVaIay8BccgBtsofagA6_g'
-global.packname = '★الجزار الوزير يروحي★'
-global.author = '★01098906252★'
+global.packname = '★ميمو يروحي★'
+global.author = '★01282987471★'
 global.sessionName = 'session'
 global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
